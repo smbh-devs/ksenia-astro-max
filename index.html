@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff5ef">
+  <meta name="description" content="Ксения — астролог с 12-летним опытом и 7000+ клиентов. Получите бесплатный персональный разбор в MAX.">
+  <title>Ксения | Астролог — бесплатный разбор</title>
+  <style>
+    :root {
+      --bg-top:#fff8f3;
+      --bg-bottom:#ffefe6;
+      --text:#1c1c1c;
+      --muted:#5b5754;
+      --chip:#ffffffb8;
+      --chip-border:#eadfd7;
+      --cta-1:#168bff;
+      --cta-2:#7167ff;
+      --shadow:0 10px 30px rgba(74, 48, 31, .08);
+    }
+
+    * { box-sizing:border-box; }
+
+    html, body { margin:0; min-height:100%; }
+
+    body {
+      min-height:100dvh;
+      overflow-x:hidden;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 14% 14%, rgba(255,255,255,.95) 0 1px, transparent 2px),
+        radial-gradient(circle at 86% 20%, rgba(255,255,255,.75) 0 1px, transparent 2px),
+        linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
+      background-size:auto, auto, auto;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    .page {
+      min-height:100dvh;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+      position:relative;
+      isolation:isolate;
+    }
+
+    .spark {
+      position:absolute;
+      z-index:-1;
+      user-select:none;
+      pointer-events:none;
+      opacity:.18;
+      font-size:22px;
+      filter:grayscale(.15);
+    }
+    .spark.one { top:12%; left:8%; transform:rotate(-12deg); }
+    .spark.two { right:8%; bottom:15%; transform:rotate(10deg) scale(.8); }
+
+    main {
+      width:min(100%, 560px);
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .avatar-wrap {
+      width:126px;
+      height:126px;
+      border-radius:50%;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:#f4e7de;
+      margin-bottom:18px;
+      flex:0 0 auto;
+    }
+
+    .avatar {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:50% 20%;
+    }
+
+    h1 {
+      margin:0;
+      font-size:clamp(28px, 7vw, 38px);
+      line-height:1.12;
+      letter-spacing:-.035em;
+      font-weight:780;
+      text-wrap:balance;
+    }
+
+    .lead {
+      max-width:500px;
+      margin:14px 0 0;
+      color:#33302e;
+      font-size:clamp(18px, 4.8vw, 22px);
+      line-height:1.42;
+      letter-spacing:-.015em;
+      text-wrap:balance;
+    }
+
+    .proof {
+      width:100%;
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .chip {
+      min-height:52px;
+      padding:12px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:16px;
+      border:1px solid var(--chip-border);
+      background:var(--chip);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+      box-shadow:0 6px 18px rgba(80, 55, 39, .035);
+      font-size:16px;
+      font-weight:680;
+      line-height:1.2;
+    }
+
+    .cta {
+      width:100%;
+      min-height:64px;
+      margin-top:22px;
+      padding:15px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:18px;
+      background:linear-gradient(110deg,var(--cta-1),var(--cta-2));
+      color:#fff;
+      text-decoration:none;
+      font-size:clamp(17px,4.6vw,20px);
+      line-height:1.2;
+      font-weight:780;
+      letter-spacing:-.015em;
+      box-shadow:0 12px 24px rgba(53, 112, 245, .22);
+      -webkit-tap-highlight-color:transparent;
+      transition:transform .16s ease, filter .16s ease, box-shadow .16s ease;
+    }
+
+    .cta-mark {
+      width:24px;
+      height:24px;
+      border-radius:8px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.18);
+      font-size:15px;
+      font-weight:800;
+      flex:0 0 auto;
+    }
+
+    .free {
+      margin:11px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:650;
+    }
+
+    .cta:focus-visible {
+      outline:3px solid rgba(22,139,255,.28);
+      outline-offset:4px;
+    }
+
+    @media (hover:hover) {
+      .cta:hover {
+        transform:translateY(-1px);
+        filter:brightness(.97) saturate(1.06);
+        box-shadow:0 14px 28px rgba(53, 112, 245, .27);
+      }
+    }
+
+    .cta:active { transform:scale(.985); }
+
+    @media (min-width:481px) {
+      .page { padding-left:28px; padding-right:28px; }
+      .avatar-wrap { width:138px; height:138px; margin-bottom:20px; }
+      .proof { max-width:500px; gap:12px; }
+      .cta { max-width:520px; min-height:66px; }
+    }
+
+    @media (min-width:1025px) {
+      .avatar-wrap { width:146px; height:146px; }
+      .lead { margin-top:16px; }
+      .proof { margin-top:20px; }
+      .cta { margin-top:24px; }
+    }
+
+    /* Keep the key action visible on short mobile screens. */
+    @media (max-height:700px) and (max-width:480px) {
+      .page { align-items:flex-start; padding-top:18px; padding-bottom:18px; }
+      .avatar-wrap { width:112px; height:112px; margin-bottom:14px; }
+      h1 { font-size:27px; }
+      .lead { margin-top:10px; font-size:17px; line-height:1.35; }
+      .proof { margin-top:14px; }
+      .chip { min-height:46px; padding:10px 12px; font-size:15px; }
+      .cta { margin-top:16px; min-height:58px; }
+      .free { margin-top:8px; }
+    }
+
+    @media (max-width:340px) {
+      .page { padding-left:14px; padding-right:14px; }
+      .proof { grid-template-columns:1fr; gap:8px; }
+      .chip { min-height:44px; }
+      .cta { font-size:16px; padding-left:12px; padding-right:12px; }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .cta { transition:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="spark one" aria-hidden="true">✦</span>
+    <span class="spark two" aria-hidden="true">✧</span>
+
+    <main aria-labelledby="page-title">
+      <div class="avatar-wrap">
+        <img
+          class="avatar"
+          src="ksenia.webp"
+          width="720"
+          height="1073"
+          alt="Ксения, астролог"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </div>
+
+      <h1 id="page-title">✨ Ксения | Астролог</h1>
+
+      <p class="lead">Помогаю открыть себя<br>и изменить жизнь с силой астрологии ⭐️</p>
+
+      <div class="proof" aria-label="Опыт Ксении">
+        <div class="chip">12 лет опыта</div>
+        <div class="chip">7000+ клиентов</div>
+      </div>
+
+      <a
+        class="cta"
+        href="https://max.ru/id7751381850_2_bot"
+        aria-label="Получить бесплатный разбор в MAX"
+      >
+        <span class="cta-mark" aria-hidden="true">M</span>
+        <span>Получить бесплатный разбор в MAX</span>
+      </a>
+
+      <p class="free">✨ Бесплатно</p>
+    </main>
+  </div>
+</body>
+</html>
