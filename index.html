@@ -6,6 +6,19 @@
   <meta name="theme-color" content="#fff5ef">
   <meta name="description" content="Ксения — астролог с 12-летним опытом и 7000+ клиентов. Получите бесплатный персональный разбор в MAX.">
   <title>Ксения | Астролог — бесплатный разбор</title>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112717238', 'ym');
+
+    ym(112717238, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <!-- /Yandex.Metrika counter (noscript fallback is at the top of <body>: a <div> is not allowed in <head>) -->
   <style>
     :root {
       --bg-top:#fff8f3;
@@ -226,6 +239,7 @@
   </style>
 </head>
 <body>
+  <noscript><div><img src="https://mc.yandex.ru/watch/112717238" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <div class="page">
     <span class="spark one" aria-hidden="true">✦</span>
     <span class="spark two" aria-hidden="true">✧</span>
@@ -254,6 +268,7 @@
 
       <a
         class="cta"
+        id="cta-max"
         href="https://max.ru/id7751381850_2_bot"
         aria-label="Получить бесплатный разбор в MAX"
       >
@@ -264,5 +279,16 @@
       <p class="free">✨ Бесплатно</p>
     </main>
   </div>
+
+  <!-- Metrika goal: create "cta_click" as a JavaScript-событие in the counter settings. -->
+  <script>
+    document.getElementById('cta-max').addEventListener('click', function () {
+      try {
+        window.ym && window.ym(112717238, 'reachGoal', 'cta_click');
+      } catch (e) {
+        // Analytics must never break the page.
+      }
+    });
+  </script>
 </body>
 </html>
